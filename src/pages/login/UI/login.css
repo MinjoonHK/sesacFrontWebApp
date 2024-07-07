@@ -1,2 +1,65 @@
 @media screen and (max-width: 480px) {
+  .login-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .login-page-upper-wrapper {
+    height: 50%;
+  }
+
+  .login-page-bottom-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-page-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 11px;
+    justify-content: center;
+  }
+
+  .login-page-button {
+    width: 340px;
+    height: 49px;
+    margin: 0 auto !important;
+    font-size: 16px;
+  }
+
+  .login-page-google-button {
+    background-color: black !important;
+    color: white !important;
+  }
+
+  .login-page-kakao-button {
+    background-color: #fee500 !important;
+    color: black !important;
+  }
+
+  .login-page-naver-button {
+    background-color: #04c75a !important;
+    color: white !important;
+  }
+
+  .login-page-email-button {
+    color: black !important;
+    border: 1px solid black !important;
+  }
+
+  .button-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .button-text {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+  }
 }
