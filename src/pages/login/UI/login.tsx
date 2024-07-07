@@ -12,7 +12,7 @@ export const LoginPage = () => {
             variant="contained"
           >
             <Box className="button-content-wrapper">
-              <img src="./public/img/appleIcon.png" className="button-icon" />
+              <img src="/img/appleIcon.png" className="button-icon" />
               <span className="button-text">Apple로 로그인</span>
             </Box>
           </Button>
@@ -22,7 +22,7 @@ export const LoginPage = () => {
             variant="contained"
           >
             <Box className="button-content-wrapper">
-              <img src="./public/img/kakaoIcon.png" className="button-icon" />
+              <img src="/img/kakaoIcon.png" className="button-icon" />
               <span className="button-text">카카오톡으로 로그인</span>
             </Box>
           </Button>
@@ -32,7 +32,7 @@ export const LoginPage = () => {
           >
             <Box className="button-content-wrapper">
               <img
-                src="./public/img/naverIcon.png"
+                src="/img/naverIcon.png"
                 className="button-icon"
                 style={{ width: "19px", height: "19px" }}
               />
@@ -44,6 +44,11 @@ export const LoginPage = () => {
             variant="outlined"
           >
             <Box className="button-content-wrapper">
+              <img
+                src="/img/emailIcon.png"
+                className="button-icon"
+                style={{ width: "21px", height: "15px" }}
+              />
               <span className="button-text">이메일로 로그인</span>
             </Box>
           </Button>
