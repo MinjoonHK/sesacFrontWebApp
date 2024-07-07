@@ -1,0 +1,22 @@
+{
+  "name": "jaranara sesac",
+  "short_name": "sesac",
+  "author": "minjoon park",
+  "icons": [
+    {
+      "src": "/img/appleIcon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/appleIcon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://sesac-front-web-app.vercel.app/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#fff",
+  "theme_color": "#fff"
+}
