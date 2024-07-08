@@ -1,29 +1,23 @@
 import { TextField } from "@mui/material";
 import { useState } from "react";
+import "./signup.css";
+
+const labelSize = "1rem"; // 16px -> 1rem
+const placeholderSize = "0.8125rem"; // 13px -> 0.8125rem
 
 export const SignUpPage = () => {
   const [emailSent, setEmailSent] = useState(false);
   return (
     <div className="signup-page-wrapper">
-      <div
-        className="signup-page-inner-wrapper"
-        style={{
-          marginTop: "100px",
-          display: "flex",
-          marginLeft: "32px",
-          marginRight: "32px",
-          flexDirection: "column",
-          gap: "21px",
-        }}
-      >
-        <div style={{ display: "flex" }}>
+      <div className="signup-page-inner-wrapper">
+        <div className="input-group">
           <TextField
             label="아이디(이메일)"
             type="email"
             InputLabelProps={{
               shrink: true,
               style: {
-                fontSize: "16px",
+                fontSize: labelSize,
                 color: "black",
                 fontFamily: "Pretendard",
                 fontWeight: "bold",
@@ -33,35 +27,21 @@ export const SignUpPage = () => {
             variant="standard"
             sx={{
               "& .MuiInputBase-input::placeholder": {
-                fontSize: "13px", // 원하는 폰트 크기로 변경
+                fontSize: placeholderSize,
                 fontFamily: "Pretendard",
               },
             }}
           />
-          <button
-            style={{
-              borderRadius: "24.5px",
-              width: "83px",
-              height: "28px",
-              border: "1px solid #191600",
-              backgroundColor: "white",
-              marginTop: "20px",
-              marginLeft: "7px",
-              color: "#191600",
-              fontWeight: "bold",
-            }}
-          >
-            중복확인
-          </button>
+          <button className="check-button">중복확인</button>
         </div>
-        <div style={{ display: "flex" }}>
+        <div className="input-group">
           <TextField
             label="인증번호"
             type="email"
             InputLabelProps={{
               shrink: true,
               style: {
-                fontSize: "16px",
+                fontSize: labelSize,
                 color: "black",
                 fontFamily: "Pretendard",
                 fontWeight: "bold",
@@ -71,23 +51,13 @@ export const SignUpPage = () => {
             variant="standard"
             sx={{
               "& .MuiInputBase-input::placeholder": {
-                fontSize: "13px", // 원하는 폰트 크기로 변경
+                fontSize: placeholderSize,
                 fontFamily: "Pretendard",
               },
             }}
           />
           <button
-            style={{
-              borderRadius: "24.5px",
-              width: "100px",
-              height: "28px",
-              border: "1px solid #191600",
-              backgroundColor: "white",
-              marginTop: "20px",
-              marginLeft: "7px",
-              color: "#191600",
-              fontWeight: "bold",
-            }}
+            className="send-button"
             onClick={() => {
               if (emailSent) return;
               setEmailSent(true);
@@ -103,7 +73,7 @@ export const SignUpPage = () => {
           InputLabelProps={{
             shrink: true,
             style: {
-              fontSize: "16px",
+              fontSize: labelSize,
               color: "black",
               fontFamily: "Pretendard",
               fontWeight: "bold",
@@ -113,7 +83,7 @@ export const SignUpPage = () => {
           variant="standard"
           sx={{
             "& .MuiInputBase-input::placeholder": {
-              fontSize: "13px", // 원하는 폰트 크기로 변경
+              fontSize: placeholderSize,
               fontFamily: "Pretendard",
             },
           }}
@@ -123,7 +93,7 @@ export const SignUpPage = () => {
           InputLabelProps={{
             shrink: true,
             style: {
-              fontSize: "16px",
+              fontSize: labelSize,
               color: "black",
               fontFamily: "Pretendard",
               fontWeight: "bold",
@@ -133,7 +103,7 @@ export const SignUpPage = () => {
           variant="standard"
           sx={{
             "& .MuiInputBase-input::placeholder": {
-              fontSize: "13px", // 원하는 폰트 크기로 변경
+              fontSize: placeholderSize,
               fontFamily: "Pretendard",
             },
           }}
@@ -143,7 +113,7 @@ export const SignUpPage = () => {
           InputLabelProps={{
             shrink: true,
             style: {
-              fontSize: "16px",
+              fontSize: labelSize,
               color: "black",
               fontFamily: "Pretendard",
               fontWeight: "bold",
@@ -153,7 +123,7 @@ export const SignUpPage = () => {
           variant="standard"
           sx={{
             "& .MuiInputBase-input::placeholder": {
-              fontSize: "13px", // 원하는 폰트 크기로 변경
+              fontSize: placeholderSize,
               fontFamily: "Pretendard",
             },
           }}
@@ -163,7 +133,7 @@ export const SignUpPage = () => {
           InputLabelProps={{
             shrink: true,
             style: {
-              fontSize: "16px",
+              fontSize: labelSize,
               color: "black",
               fontFamily: "Pretendard",
               fontWeight: "bold",
@@ -173,7 +143,7 @@ export const SignUpPage = () => {
           variant="standard"
           sx={{
             "& .MuiInputBase-input::placeholder": {
-              fontSize: "13px", // 원하는 폰트 크기로 변경
+              fontSize: placeholderSize,
               fontFamily: "Pretendard",
             },
           }}
@@ -183,7 +153,7 @@ export const SignUpPage = () => {
           InputLabelProps={{
             shrink: true,
             style: {
-              fontSize: "16px",
+              fontSize: labelSize,
               color: "black",
               fontFamily: "Pretendard",
               fontWeight: "bold",
@@ -193,25 +163,13 @@ export const SignUpPage = () => {
           variant="standard"
           sx={{
             "& .MuiInputBase-input::placeholder": {
-              fontSize: "13px", // 원하는 폰트 크기로 변경
+              fontSize: placeholderSize,
               fontFamily: "Pretendard",
             },
           }}
         />
       </div>
-      <button
-        style={{
-          width: "340px",
-          height: "49px",
-          backgroundColor: "black",
-          color: "white",
-          borderRadius: "24.5px",
-          marginTop: "98px",
-          marginLeft: "25px",
-        }}
-      >
-        조금이 시작하기
-      </button>
+      <button className="submit-button">조금이 시작하기</button>
     </div>
   );
 };

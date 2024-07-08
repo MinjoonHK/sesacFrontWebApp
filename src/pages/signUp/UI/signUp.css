@@ -1,0 +1,42 @@
+.signup-page-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3125rem;
+  margin-top: 6.25rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.input-group {
+  display: flex;
+}
+
+.check-button,
+.send-button {
+  border-radius: 1.53125rem;
+  height: 1.75rem;
+  border: 1px solid #191600;
+  background-color: white;
+  margin-top: 1.25rem;
+  margin-left: 0.4375rem;
+  color: #191600;
+  font-weight: bold;
+}
+
+.check-button {
+  width: 5.1875rem;
+}
+
+.send-button {
+  width: 6.25rem;
+}
+
+.submit-button {
+  width: 21.25rem;
+  height: 3.0625rem;
+  background-color: black;
+  color: white;
+  border-radius: 1.53125rem;
+  margin-top: 6.125rem;
+  margin-left: 1.5625rem;
+}
