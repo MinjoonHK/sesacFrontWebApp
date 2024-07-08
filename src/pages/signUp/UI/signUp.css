@@ -38,5 +38,9 @@
   color: white;
   border-radius: 1.53125rem;
   margin-top: 6.125rem;
-  margin-left: 1.5625rem;
+}
+
+.signup-form-submit-button-wrapper {
+  display: flex;
+  justify-content: center;
 }

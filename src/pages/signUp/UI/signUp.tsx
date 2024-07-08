@@ -169,7 +169,9 @@ export const SignUpPage = () => {
           }}
         />
       </div>
-      <button className="submit-button">조금이 시작하기</button>
+      <div className="signup-form-submit-button-wrapper">
+        <button className="submit-button">조금이 시작하기</button>
+      </div>
     </div>
   );
 };
