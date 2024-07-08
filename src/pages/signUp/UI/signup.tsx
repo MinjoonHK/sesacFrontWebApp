@@ -88,6 +88,10 @@ export const SignUpPage = () => {
               color: "#191600",
               fontWeight: "bold",
             }}
+            onClick={() => {
+              if (emailSent) return;
+              setEmailSent(true);
+            }}
           >
             {emailSent ? "확인" : "인증번호 전송"}
           </button>
