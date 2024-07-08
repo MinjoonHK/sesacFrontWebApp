@@ -54,7 +54,7 @@ export const LoginPage = () => {
                 className="button-icon"
                 style={{ width: "21px", height: "15px" }}
               />
-              <span className="button-text">이메일로 로그인</span>
+              <span className="button-text">이메일로 로그인 - 회원가입</span>
             </Box>
           </Button>
         </div>
