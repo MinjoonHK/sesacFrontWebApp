@@ -2,8 +2,8 @@ import { TextField } from "@mui/material";
 import { useState } from "react";
 import "./signup.css";
 
-const labelSize = "1rem"; // 16px -> 1rem
-const placeholderSize = "0.8125rem"; // 13px -> 0.8125rem
+const labelSize = "1rem";
+const placeholderSize = "0.8125rem";
 
 export const SignUpPage = () => {
   const [emailSent, setEmailSent] = useState(false);
