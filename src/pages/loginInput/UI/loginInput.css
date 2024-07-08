@@ -34,5 +34,7 @@
   .login-input-page-sub__menu div {
     display: flex;
     align-items: center;
+    color: #b1b5b8;
+    font-size: 13px;
   }
 }
