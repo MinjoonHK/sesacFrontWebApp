@@ -1,6 +1,6 @@
 import { TextField } from "@mui/material";
 import { useState } from "react";
-import "./signup.css";
+import "./signUp.css";
 
 const labelSize = "1rem";
 const placeholderSize = "0.8125rem";
