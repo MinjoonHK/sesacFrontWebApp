@@ -1,7 +1,9 @@
 import { Box, Button } from "@mui/material";
 import "./login.css";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="login-page-wrapper">
       <div className="login-page-upper-wrapper">ㅎㅇ</div>
@@ -42,6 +44,9 @@ export const LoginPage = () => {
           <Button
             className="login-page-button login-page-email-button"
             variant="outlined"
+            onClick={() => {
+              navigate("/logininput");
+            }}
           >
             <Box className="button-content-wrapper">
               <img
