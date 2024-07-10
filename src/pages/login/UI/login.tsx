@@ -45,7 +45,7 @@ export const LoginPage = () => {
             className="login-page-button login-page-email-button"
             variant="outlined"
             onClick={() => {
-              navigate("/logininput");
+              navigate("/login");
             }}
           >
             <Box className="button-content-wrapper">
