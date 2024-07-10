@@ -8,7 +8,8 @@
 }
 
 .input-group {
-  display: flex;
+  margin-right: 0;
+  width: 100%;
 }
 
 .check-button,
@@ -25,10 +26,14 @@
 
 .check-button {
   width: 5.1875rem;
+  font-size: 12px;
+  font-family: "Pretendard";
 }
 
 .send-button {
-  width: 6.25rem;
+  width: 5.1875rem;
+  font-size: 10px;
+  font-family: "Pretendard";
 }
 
 .submit-button {
