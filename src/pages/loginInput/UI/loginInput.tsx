@@ -43,12 +43,12 @@ export const LoginInputPage = () => {
               marginLeft: "auto",
               marginRight: "auto",
               border: "none",
-              backgroundColor: "#131313",
+              backgroundColor: "#3561FF",
               color: "white",
               fontFamily: "Pretendard",
             }}
           >
-            조금이 로그인하기
+            당찬이 로그인하기
           </Button>
         </div>
         <div className="login-input-page-sub__menu-wrapper">

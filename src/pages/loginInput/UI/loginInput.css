@@ -1,40 +1,38 @@
-@media screen and (max-width: 480px) {
-  .login-input-page-wrapper {
-    font-family: "Pretendard" !important;
-  }
+.login-input-page-wrapper {
+  font-family: "Pretendard" !important;
+}
 
-  .login-input-form-wrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.875rem;
-    margin-top: 8.6875rem;
-  }
+.login-input-form-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 8.6875rem;
+}
 
-  .login-input-page-input {
-    width: 21.25rem;
-    height: 3.0625rem;
-    margin: 0 auto !important;
-    border-color: #b1b5b8 !important;
-    font-family: "Pretendard" !important;
-  }
+.login-input-page-input {
+  width: 21.25rem;
+  height: 3.0625rem;
+  margin: 0 auto !important;
+  border-color: #b1b5b8 !important;
+  font-family: "Pretendard" !important;
+}
 
-  .login-input-page-sub__menu-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 33px;
-  }
+.login-input-page-sub__menu-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 33px;
+}
 
-  .login-input-page-sub__menu {
-    display: flex;
-    justify-content: space-between;
-    width: 340px;
-  }
+.login-input-page-sub__menu {
+  display: flex;
+  justify-content: space-between;
+  width: 340px;
+}
 
-  .login-input-page-sub__menu div {
-    display: flex;
-    align-items: center;
-    color: #b1b5b8;
-    font-size: 13px;
-  }
+.login-input-page-sub__menu div {
+  display: flex;
+  align-items: center;
+  color: #b1b5b8;
+  font-size: 13px;
 }
