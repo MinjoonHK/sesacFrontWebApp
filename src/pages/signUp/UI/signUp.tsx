@@ -31,7 +31,7 @@ export const SignUpPage = () => {
         <div className="input-group">
           <TextField
             required
-            style={{ width: "236px" }}
+            style={{ width: "calc(100% - 5.688rem)" }}
             label="아이디(이메일)"
             type="email"
             InputLabelProps={inputLabelProps}
@@ -41,10 +41,10 @@ export const SignUpPage = () => {
           />
           <button className="check-button">중복확인</button>
         </div>
-        <div className="input-group">
+        <div className="input-group" style={{ width: "100%" }}>
           <TextField
             required
-            style={{ width: "236px" }}
+            style={{ width: "calc(100% - 5.688rem)" }}
             label="인증번호"
             type="email"
             InputLabelProps={inputLabelProps}
@@ -114,7 +114,7 @@ export const SignUpPage = () => {
           type="submit"
           className="submit-button"
         >
-          조금이 시작하기
+          당찬이 시작하기
         </button>
       </div>
     </div>

@@ -39,7 +39,8 @@
 .submit-button {
   width: 21.25rem;
   height: 3.0625rem;
-  background-color: black;
+  border: transparent;
+  background-color: #3561ff;
   color: white;
   border-radius: 1.53125rem;
   margin-top: 6.125rem;
