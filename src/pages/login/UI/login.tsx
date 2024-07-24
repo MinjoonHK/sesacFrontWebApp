@@ -16,7 +16,35 @@ export const LoginPage = () => {
 
   return (
     <div className="login-page-wrapper">
-      <div className="login-page-upper-wrapper"></div>
+      <div className="login-page-upper-wrapper">
+        <div
+          style={{
+            marginTop: "223px",
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src="/img/dangchanWordIcon.png"
+            alt="이미지를 표시할수 없습니다"
+            width="124.41px"
+            height="74.25px"
+          />
+        </div>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            fontFamily: "SCDream6",
+            fontSize: "20px",
+            marginTop: "29.75px",
+            color: "white",
+          }}
+        >
+          당신의 찬란한 시작을 응원합니다
+        </div>
+      </div>
       <div className="login-page-bottom-wrapper">
         <Button
           className="login-page-button login-page-google-button"

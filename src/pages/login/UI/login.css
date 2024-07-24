@@ -2,14 +2,12 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-.login-page-upper-wrapper {
-  height: 50%;
+  background-color: #3561ff;
 }
 
 .login-page-bottom-wrapper {
   display: flex;
+  margin-top: 156px;
   flex-direction: column;
   gap: 0.6875rem; /* 11px */
   justify-content: center;
@@ -31,6 +29,7 @@
   font-size: 1rem; /* 16px */
   box-shadow: none !important;
   font-family: "Pretendard" !important;
+  border-radius: 8px !important;
 }
 
 .login-page-google-button {
@@ -49,8 +48,8 @@
 }
 
 .login-page-email-button {
-  color: black !important;
-  border: 0.0625rem solid black !important;
+  color: white !important;
+  border: 0.0625rem solid white !important;
 }
 
 .button-content-wrapper {
@@ -63,5 +62,6 @@
 .button-text {
   flex: 1;
   text-align: center;
-  font-weight: bold;
+
+  font-size: 16px;
 }
