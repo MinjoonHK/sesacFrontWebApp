@@ -1,7 +1,7 @@
 <div align="center">
   <h1>보호종료 아동 자립 지원 어플리케이션 당찬이</h1>
   <div style="text-align: center;">
-  <img width="125" alt="dangchanWordIcon" src="https://github.com/user-attachments/assets/4c7a4a6f-8c8b-490d-a618-9a54d49001a7">
+  <img width="125" alt="dangchanWordIcon" src="https://github.com/user-attachments/assets/7c64a01c-960c-4e4c-8b83-3786baf10869">
       <img width="69" alt="dangchanWordIcon" src="https://github.com/user-attachments/assets/f0f55408-a706-48a3-bd12-52955709d8aa">
 </div>
 
