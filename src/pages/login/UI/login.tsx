@@ -19,17 +19,15 @@ export const LoginPage = () => {
       <div className="login-page-upper-wrapper">
         <div
           style={{
-            marginTop: "223px",
+            marginTop: "26.422vh",
             display: "flex",
             width: "100%",
             justifyContent: "center",
           }}
         >
           <img
-            src="/img/dangchanWordIcon.png"
+            src="/img/dangchanWordIcon.svg"
             alt="이미지를 표시할수 없습니다"
-            width="124.41px"
-            height="74.25px"
           />
         </div>
         <div
@@ -37,8 +35,8 @@ export const LoginPage = () => {
             width: "100%",
             textAlign: "center",
             fontFamily: "SCDream6",
-            fontSize: "20px",
-            marginTop: "29.75px",
+            fontSize: "5.128vw",
+            marginTop: "3.525vh",
             color: "white",
           }}
         >
