@@ -1,52 +1,19 @@
-.signup-page-inner-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.3125rem;
-  margin-top: 6.25rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.input-group {
-  margin-right: 0;
+input {
+  border: none;
+  border-bottom: 1px solid #b1b5b8;
+  outline: none;
+  padding-bottom: 8px;
+  padding-left: 0;
   width: 100%;
 }
 
-.check-button,
-.send-button {
-  border-radius: 1.53125rem;
-  height: 1.75rem;
-  border: 1px solid #191600;
-  background-color: white;
-  margin-top: 1.25rem;
-  margin-left: 0.4375rem;
-  color: #191600;
-  font-weight: bold;
+.signup-page-signup-content-input::placeholder {
+  font-family: "Pretendard-Medium";
+  color: #b1b5b8;
+  font-size: 13px;
 }
 
-.check-button {
-  width: 5.1875rem;
-  font-size: 12px;
-  font-family: "Pretendard";
-}
-
-.send-button {
-  width: 5.1875rem;
-  font-size: 10px;
-  font-family: "Pretendard";
-}
-
-.submit-button {
-  width: 21.25rem;
-  height: 3.0625rem;
-  border: transparent;
-  background-color: #3561ff;
-  color: white;
-  border-radius: 1.53125rem;
-  margin-top: 6.125rem;
-}
-
-.signup-form-submit-button-wrapper {
-  display: flex;
-  justify-content: center;
+label {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
 }

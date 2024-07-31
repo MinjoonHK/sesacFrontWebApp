@@ -1,9 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import "./chatbot.css";
 
 export const ChatUI = () => {
+  const navigate = useNavigate();
   return (
     <div>
-      <div style={{}}>
+      <div>
+        <div
+          onClick={() => {
+            navigate("/main/calendar");
+          }}
+          style={{ position: "fixed", top: "5.45vh", left: "7.949vw" }}
+        >
+          <img
+            style={{ width: "5vw", height: "1.896vh" }}
+            src="/img/back_arrow_icon.svg"
+            alt="이미지를 표시할수 없습니다"
+          />
+        </div>
         <div
           style={{
             marginTop: "95px",

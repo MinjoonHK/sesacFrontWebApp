@@ -1,4 +1,8 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
+  const [selected, setSelected] = useState("home");
   return (
     <div
       style={{
@@ -16,16 +20,42 @@ export const Footer = () => {
       }}
     >
       <div>
-        <img src="/img/footer_icon_home.svg" alt="홈 아이콘" />
+        <Link to="/home">
+          <img src="/img/footer_icon_home.svg" alt="홈 아이콘" />
+        </Link>
       </div>
       <div>
-        <img src="/img/footer_icon_span.svg" alt="내 소비 아이콘" />
+        <Link to="/main/calendar">
+          <img src="/img/footer_icon_span.svg" alt="내 소비 아이콘" />
+        </Link>
       </div>
       <div>
-        <img src="/img/footer_icon_dangchan.svg" alt="커뮤니티 아이콘" />
+        <Link to="/chat">
+          <img
+            src={
+              selected == "chat"
+                ? "/img/footer_icon_dangchan.svg"
+                : "/img/footer_icon_dangchan.svg"
+            }
+            alt="커뮤니티 아이콘"
+          />
+        </Link>
       </div>
-      <div>
-        <img src="/img/footer_icon_community.svg" alt="마이 아이콘" />
+      <div
+        onClick={() => {
+          setSelected("community");
+        }}
+      >
+        <Link to="/main/community">
+          <img
+            src={
+              selected == "community"
+                ? "/img/footer_icon_community_clicked.svg"
+                : "/img/footer_icon_community.svg"
+            }
+            alt="마이 아이콘"
+          />
+        </Link>
       </div>
     </div>
   );

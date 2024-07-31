@@ -59,9 +59,10 @@ export const CommunityPage = () => {
           boxSizing: "border-box",
         }}
       >
-        {CommunityData.map((data) => {
+        {CommunityData.map((data, index) => {
           return (
             <div
+              key={`${index}communityData`}
               style={{
                 boxSizing: "border-box",
                 padding: "21px",
