@@ -12,7 +12,7 @@ export const LoginInputPage = () => {
     email: string;
     password: string;
   }) => {
-    let res = axios
+    axios
       .post("/auth/login", {
         email,
         password,

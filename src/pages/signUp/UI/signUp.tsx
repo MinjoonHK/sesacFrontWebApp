@@ -19,7 +19,7 @@ export const SignUpPage = () => {
   const navigate = useNavigate();
   const [signUpForm] = Form.useForm();
   const handleSubmit = ({ email, password, userName, birth }: SignUpForm) => {
-    let res = axios
+    axios
       .post("/auth/signup", {
         email,
         password,
