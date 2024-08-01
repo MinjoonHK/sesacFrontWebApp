@@ -1,7 +1,8 @@
-import { Form } from "antd";
+import { Button, Form } from "antd";
 import "./signUp.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 interface SignUpForm {
   email: string;
@@ -72,13 +73,14 @@ export const SignUpPage = () => {
               placeholder="이메일 주소"
             />
           </Form.Item>
-          <Form.Item>
+          <Form.Item style={{ marginBottom: "0" }}>
             <Form.Item
               name="authCode"
               label="인증번호"
               style={{
                 fontFamily: "Pretendard-Regular",
                 display: "inline-block",
+                width: "calc(236px - 8px)",
               }}
             >
               <input
@@ -86,9 +88,24 @@ export const SignUpPage = () => {
                 placeholder="인증번호 입력"
               />
             </Form.Item>
-            <Form.Item style={{ display: "inline-block" }}>
-              <button
+            <Form.Item
+              style={{
+                display: "inline-block",
+                position: "relative",
+                height: "100%",
+                marginTop: "30px",
+                marginLeft: "8px",
+              }}
+            >
+              <Button
                 onClick={() => {
+                  if (signUpForm.getFieldValue("email") === "") {
+                    Swal.fire({
+                      icon: "error",
+                      title: "이메일을 입력해 주세요",
+                    });
+                    return;
+                  }
                   axios
                     .post("/mail/send", {
                       to: signUpForm.getFieldValue("email"),
@@ -103,17 +120,16 @@ export const SignUpPage = () => {
                 }}
                 style={{
                   borderRadius: "24.5px",
-                  fontFamily: "Pretendard-Bold",
-                  fontSize: "16px",
-                  backgroundColor: "#3561FF",
-                  color: "white",
-                  border: "none",
+                  height: "28px",
+                  fontSize: "10px",
+                  fontFamily: "Pretendard-Medium",
                 }}
               >
                 인증번호 받기
-              </button>
+              </Button>
             </Form.Item>
           </Form.Item>
+
           <Form.Item
             required
             rules={[
