@@ -1,10 +1,9 @@
 import { Checkbox, Form, Input } from "antd";
 import "./loginInput.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export const LoginInputPage = () => {
-  const userName = "admin@gmail.com";
-  const userPass = "1234";
   const navigate = useNavigate();
   const handleSubmit = ({
     email,
@@ -13,11 +12,22 @@ export const LoginInputPage = () => {
     email: string;
     password: string;
   }) => {
-    if (email === userName && password === userPass) {
-      navigate("/chat");
-    } else {
-      alert("아이디 또는 비밀번호가 일치하지 않습니다.");
-    }
+    let res = axios
+      .post("/auth/login", {
+        email,
+        password,
+      })
+      .then((res) => {
+        if (res.status == 200) {
+          console.log(res.data.data.access_token);
+          localStorage.setItem("access_token", res.data.data.access_token);
+          navigate("/main/home");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+      });
   };
   return (
     <div className="login-input-page-wrapper">

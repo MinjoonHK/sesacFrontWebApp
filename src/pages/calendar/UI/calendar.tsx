@@ -1,6 +1,24 @@
 import { Calendar } from "antd";
+import { jwtDecode } from "jwt-decode";
+import { useEffect, useState } from "react";
+
+interface DecodedToken {
+  exp: number;
+  name: string;
+  iat: number;
+  userId: string;
+  email: string;
+}
 
 export const CalendarPage = () => {
+  const [username, setUsername] = useState<string>("");
+  useEffect(() => {
+    let accessToken = localStorage.getItem("access_token");
+    if (accessToken) {
+      let decoded: DecodedToken = jwtDecode<DecodedToken>(accessToken);
+      setUsername(decoded.name);
+    }
+  }, []);
   return (
     <div>
       <div
@@ -12,7 +30,7 @@ export const CalendarPage = () => {
         }}
       >
         <p>
-          당찬 김새싹님,
+          당찬 {username}님,
           <br />
           이번 달은 소비가 늘었어요!
         </p>

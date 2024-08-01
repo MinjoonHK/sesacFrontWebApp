@@ -1,4 +1,23 @@
-export const HomePage = () => {
+import { jwtDecode } from "jwt-decode";
+import { useEffect, useState } from "react";
+
+interface DecodedToken {
+  exp: number;
+  name: string;
+  iat: number;
+  userId: string;
+  email: string;
+}
+
+export const HomePage: React.FC = () => {
+  const [username, setUsername] = useState<string>("");
+  useEffect(() => {
+    let accessToken = localStorage.getItem("access_token");
+    if (accessToken) {
+      let decoded: DecodedToken = jwtDecode<DecodedToken>(accessToken);
+      setUsername(decoded.name);
+    }
+  }, []);
   return (
     <div>
       <div
@@ -16,7 +35,7 @@ export const HomePage = () => {
         </div>
         <div style={{ marginLeft: "3.846vw" }}>
           <div style={{ fontFamily: "Pretendard-bold", fontSize: "5.128vw" }}>
-            당찬 김새싹 님!
+            당찬 {username} 님!
           </div>
           <div style={{ display: "flex", marginTop: "1.185vh" }}>
             <div

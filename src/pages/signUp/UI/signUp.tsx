@@ -3,6 +3,7 @@ import "./signUp.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 interface SignUpForm {
   email: string;
@@ -13,18 +14,23 @@ interface SignUpForm {
   birth: string;
 }
 export const SignUpPage = () => {
+  const [emailSent, setEmailSent] = useState(false);
+  const [verified, setVerified] = useState(false);
   const navigate = useNavigate();
   const [signUpForm] = Form.useForm();
-  const handleSubmit = ({
-    email,
-    authCode,
-    password,
-    passwordConfirm,
-    userName,
-    birth,
-  }: SignUpForm) => {
-    console.log(email, authCode, password, passwordConfirm, userName, birth);
-    navigate("/login");
+  const handleSubmit = ({ email, password, userName, birth }: SignUpForm) => {
+    let res = axios
+      .post("/auth/signup", {
+        email,
+        password,
+        name: userName,
+        birth,
+      })
+      .then((res) => {
+        if (res.status == 201) {
+          navigate("/login");
+        }
+      });
   };
   return (
     <div className="signup-page-wrapper">
@@ -97,36 +103,69 @@ export const SignUpPage = () => {
                 marginLeft: "2.051vw",
               }}
             >
-              <Button
-                onClick={() => {
-                  if (signUpForm.getFieldValue("email") === "") {
-                    Swal.fire({
-                      icon: "error",
-                      title: "이메일을 입력해 주세요",
-                    });
-                    return;
-                  }
-                  axios
-                    .post("/mail/send", {
-                      to: signUpForm.getFieldValue("email"),
-                      subject: "당찬 이메일 인증",
-                    })
-                    .then((res) => {
-                      console.log(res);
-                    })
-                    .catch((err) => {
-                      console.log(err);
-                    });
-                }}
-                style={{
-                  borderRadius: "24.5px",
-                  height: "3.318vh",
-                  fontSize: "2.564vw",
-                  fontFamily: "Pretendard-Medium",
-                }}
-              >
-                인증번호 받기
-              </Button>
+              {emailSent ? (
+                <Button
+                  disabled={verified}
+                  onClick={() => {
+                    axios
+                      .post("/mail/authcheck", {
+                        email: signUpForm.getFieldValue("email"),
+                        code: signUpForm.getFieldValue("authCode"),
+                      })
+                      .then((res) => {
+                        console.log(res);
+                        if (res.data.verified === true) {
+                          setVerified(true);
+                          Swal.fire({
+                            icon: "success",
+                            title: "인증에 성공했습니다.",
+                          });
+                        }
+                      });
+                  }}
+                  style={{
+                    borderRadius: "24.5px",
+                    height: "3.318vh",
+                    fontSize: "2.564vw",
+                    fontFamily: "Pretendard-Medium",
+                  }}
+                >
+                  {verified ? "인증완료" : "인증번호 확인"}
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => {
+                    if (signUpForm.getFieldValue("email") === "") {
+                      Swal.fire({
+                        icon: "error",
+                        title: "이메일을 입력해 주세요",
+                      });
+                      return;
+                    }
+                    axios
+                      .post("/mail/send", {
+                        to: signUpForm.getFieldValue("email"),
+                      })
+                      .then((res) => {
+                        console.log(res);
+                        if (res) {
+                          setEmailSent(true);
+                        }
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                      });
+                  }}
+                  style={{
+                    borderRadius: "24.5px",
+                    height: "3.318vh",
+                    fontSize: "2.564vw",
+                    fontFamily: "Pretendard-Medium",
+                  }}
+                >
+                  인증번호 발송
+                </Button>
+              )}
             </Form.Item>
           </Form.Item>
 
