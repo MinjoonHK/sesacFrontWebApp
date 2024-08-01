@@ -93,6 +93,29 @@ export const CommunityPage = () => {
           );
         })}
       </div>
+      <div
+        style={{
+          position: "fixed",
+          bottom: "12.915vh",
+          right: "8.205vw",
+          width: "auto",
+          height: "auto",
+          backgroundColor: "transparent",
+          border: "1px solid #DEDEDE",
+          padding: "10px",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 2,
+        }}
+      >
+        <img
+          src="/img/community_pencil_icon.svg"
+          alt="이미지를 표시할 수 없습니다!"
+          style={{ width: "24px", height: "24px" }}
+        />
+      </div>
     </div>
   );
 };
