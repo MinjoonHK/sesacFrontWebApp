@@ -90,7 +90,7 @@ export const HomePage = () => {
         <div
           style={{
             fontFamily: "Pretendard-bold",
-            fontSize: "1rem",
+            fontSize: "4.103vw",
             display: "flex",
             flexDirection: "column",
             gap: "3.081vh",
