@@ -24,15 +24,15 @@ export const LoginInputPage = () => {
       <div
         className="login-page-title"
         style={{
-          marginTop: "3.673vh",
-          marginLeft: "43.333vw",
-          fontSize: "20px",
-          fontFamily: "Pretendard-bold",
+          marginTop: "8.649vh",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
-        로그인
+        <img src="/img/login_input_icon.svg" alt="이미지를 표시할수 없습니다" />
       </div>
-      <div style={{ marginTop: "15.877vh" }}>
+      <div style={{ marginTop: "7.109vh" }}>
         <Form
           onFinish={handleSubmit}
           requiredMark={false}

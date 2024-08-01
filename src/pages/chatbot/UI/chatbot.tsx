@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./chatbot.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { TypeAnimation } from "react-type-animation";
 
@@ -10,11 +10,12 @@ export const ChatUI = () => {
   const [chatMessages, setChatMessages] = useState([
     {
       sender: "bot",
-      text: "반가워요! 어떤정보를 찾고 계신가요?",
+      text: "반가워요! 어떤 정보를 찾고 계신가요?",
     },
   ]);
+  const chatContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const handleKeyUp = async (event: any) => {
+  const handleKeyUp = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter" && message.trim()) {
       const newMessage = { sender: "user", text: message };
       setChatMessages((prevMessages) => [...prevMessages, newMessage]);
@@ -24,6 +25,7 @@ export const ChatUI = () => {
         const res = await axios.post("http://203.234.62.82/api/question/chat", {
           content: JSON.stringify({ message }),
         });
+        console.log(res);
         const botMessage = {
           sender: "bot",
           text:
@@ -42,9 +44,16 @@ export const ChatUI = () => {
     }
   };
 
-  const handleOnChange = (event: any) => {
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
   };
+
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [chatMessages]);
 
   return (
     <div>
@@ -58,7 +67,7 @@ export const ChatUI = () => {
           <img
             style={{ width: "5vw", height: "1.896vh" }}
             src="/img/back_arrow_icon.svg"
-            alt="이미지를 표시할수 없습니다"
+            alt="이미지를 표시할 수 없습니다"
           />
         </div>
         <div
@@ -83,9 +92,10 @@ export const ChatUI = () => {
           김새싹님, 무엇을 도와드릴까요?
         </div>
         <div
+          ref={chatContainerRef}
           style={{
             marginTop: "7.346vh",
-            padding: "0 29px",
+            padding: "29px",
             width: "100%",
             height: "55vh",
             overflowY: "scroll",
@@ -98,7 +108,6 @@ export const ChatUI = () => {
               key={index}
               style={{
                 display: "flex",
-
                 justifyContent:
                   chat.sender === "user" ? "flex-end" : "flex-start",
               }}
@@ -134,11 +143,11 @@ export const ChatUI = () => {
                   }}
                 >
                   <TypeAnimation
-                    sequence={[chat.text]}
+                    sequence={[`${chat.text}`]}
                     speed={50}
                     cursor={false}
+                    style={{ whiteSpace: "pre-line" }}
                   />
-                  {/* {chat.text} */}
                 </div>
               </div>
             </div>
