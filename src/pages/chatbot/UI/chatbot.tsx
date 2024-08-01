@@ -22,13 +22,9 @@ export const ChatUI = () => {
       setMessage("");
 
       try {
-        const res = await axios.post(
-          "https://203.234.62.82/api/question/chat",
-          {
-            content: JSON.stringify({ message }),
-          }
-        );
-        console.log(res);
+        const res = await axios.post("http://203.234.62.82/api/question/chat", {
+          content: JSON.stringify({ message }),
+        });
         const botMessage = {
           sender: "bot",
           text:
