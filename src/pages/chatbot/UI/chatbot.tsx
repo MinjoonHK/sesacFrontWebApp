@@ -155,7 +155,7 @@ export const ChatUI = () => {
         </div>
         <div
           style={{
-            bottom: "5.569vh",
+            bottom: "4.569vh",
             position: "fixed",
             width: "100%",
             display: "flex",
