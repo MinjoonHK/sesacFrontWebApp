@@ -76,6 +76,7 @@ export const LoginInputPage = () => {
             style={{ marginTop: "14px" }}
           >
             <Input
+              type="password"
               style={{ width: "100%", height: "5.806vh" }}
               prefix={
                 <img
