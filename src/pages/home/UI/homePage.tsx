@@ -1,5 +1,6 @@
 import { jwtDecode } from "jwt-decode";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface DecodedToken {
   exp: number;
@@ -18,6 +19,8 @@ export const HomePage: React.FC = () => {
       setUsername(decoded.name);
     }
   }, []);
+
+  const navigate = useNavigate();
   return (
     <div>
       <div
@@ -145,6 +148,9 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
           <div
+            onClick={() => {
+              navigate("/login");
+            }}
             style={{
               display: "flex",
               justifyContent: "space-between",
