@@ -7,7 +7,7 @@ export const CalendarPage = () => {
         style={{
           marginTop: "5.569vh",
           marginLeft: "8.205vw",
-          fontSize: "24px",
+          fontSize: "6.154vw",
           fontFamily: "Pretendard-extraBold",
         }}
       >
@@ -22,7 +22,7 @@ export const CalendarPage = () => {
         style={{
           marginTop: "3.081vh",
           marginLeft: "8.205vw",
-          fontSize: "16px",
+          fontSize: "4.103vw",
           fontFamily: "Pretendard-bold",
         }}
       >
@@ -50,7 +50,7 @@ export const CalendarPage = () => {
             width: "100%",
             height: "100%",
             borderRadius: "22px",
-            padding: "25px",
+            padding: "2.962vh 6.41vw",
             alignItems: "center",
             display: "flex",
             justifyContent: "space-between",
@@ -68,7 +68,7 @@ export const CalendarPage = () => {
           </div>
           <div
             style={{
-              fontSize: "14px",
+              fontSize: "1.659vh",
               fontFamily: "Pretendard-bold",
               color: "white",
             }}
@@ -81,14 +81,12 @@ export const CalendarPage = () => {
       <div style={{ marginTop: "2.488vh", padding: "0 7.949vw" }}>
         <div
           style={{
+            height: "48.697vh",
             border: "1px solid #E0E0E0",
             borderRadius: "22px",
           }}
         >
-          <Calendar
-            fullscreen={false}
-            style={{ borderRadius: "22px", height: "42.697vh" }}
-          />
+          <Calendar fullscreen={false} style={{ borderRadius: "22px" }} />
         </div>
       </div>
     </div>
