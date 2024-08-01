@@ -94,6 +94,9 @@ export const LoginPage = () => {
           <span>네이버로 로그인</span>
         </div>
         <div
+          onClick={() => {
+            navigate("/login");
+          }}
           style={{
             height: "5.806vh",
             width: "100%",
