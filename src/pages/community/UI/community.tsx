@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export const CommunityPage = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div
@@ -94,6 +97,9 @@ export const CommunityPage = () => {
         })}
       </div>
       <div
+        onClick={() => {
+          navigate("/main/write");
+        }}
         style={{
           position: "fixed",
           bottom: "12.915vh",
