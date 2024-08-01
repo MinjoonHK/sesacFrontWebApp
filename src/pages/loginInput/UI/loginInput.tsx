@@ -36,7 +36,7 @@ export const LoginInputPage = () => {
         <Form
           onFinish={handleSubmit}
           requiredMark={false}
-          style={{ padding: "0 25px" }}
+          style={{ padding: "0 6.41vw" }}
         >
           <Form.Item
             name="email"
@@ -58,7 +58,7 @@ export const LoginInputPage = () => {
               prefix={
                 <img
                   src="/img/login_user_icon.svg"
-                  style={{ marginRight: "20.21px" }}
+                  style={{ marginRight: "5.182vw" }}
                 />
               }
               placeholder="아이디(이메일)"
@@ -73,7 +73,7 @@ export const LoginInputPage = () => {
             ]}
             name="password"
             required
-            style={{ marginTop: "14px" }}
+            style={{ marginTop: "1.659vh" }}
           >
             <Input
               type="password"
@@ -81,7 +81,7 @@ export const LoginInputPage = () => {
               prefix={
                 <img
                   src="/img/login_password_icon.svg"
-                  style={{ marginRight: "20.21px" }}
+                  style={{ marginRight: "5.182vw" }}
                 />
               }
               placeholder="비밀번호"
@@ -115,10 +115,10 @@ export const LoginInputPage = () => {
             }}
           >
             <div>
-              <Checkbox style={{ marginRight: "8px" }} />
+              <Checkbox style={{ marginRight: "2.051vw" }} />
               로그인 유지
             </div>
-            <div style={{ display: "flex", columnGap: "9.5px" }}>
+            <div style={{ display: "flex", columnGap: "1.126vh" }}>
               <span
                 onClick={() => {
                   navigate("/signup");
