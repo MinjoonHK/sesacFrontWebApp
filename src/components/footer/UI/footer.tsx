@@ -20,7 +20,7 @@ export const Footer = () => {
       }}
     >
       <div>
-        <Link to="/home">
+        <Link to="/main/home">
           <img src="/img/footer_icon_home.svg" alt="홈 아이콘" />
         </Link>
       </div>
