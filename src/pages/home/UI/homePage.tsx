@@ -2,7 +2,11 @@ export const HomePage = () => {
   return (
     <div>
       <div
-        style={{ marginTop: "6.28vh", padding: "0 7.949vw", display: "flex" }}
+        style={{
+          marginTop: "6.28vh",
+          padding: "0 7.949vw",
+          display: "flex",
+        }}
       >
         <div>
           <img
@@ -11,7 +15,7 @@ export const HomePage = () => {
           />
         </div>
         <div style={{ marginLeft: "3.846vw" }}>
-          <div style={{ fontFamily: "Pretendard-bold", fontSize: "20px" }}>
+          <div style={{ fontFamily: "Pretendard-bold", fontSize: "5.128vw" }}>
             당찬 김새싹 님!
           </div>
           <div style={{ display: "flex", marginTop: "1.185vh" }}>
@@ -26,7 +30,7 @@ export const HomePage = () => {
                 backgroundColor: "#3561FF",
                 borderRadius: "24.5px",
                 fontFamily: "Pretendard-semibold",
-                fontSize: "13px",
+                fontSize: "3.333vw",
                 marginRight: "1.282vw",
               }}
             >
@@ -43,7 +47,7 @@ export const HomePage = () => {
                 backgroundColor: "white",
                 border: "1px solid #3561FF",
                 borderRadius: "24.5px",
-                fontSize: "13px",
+                fontSize: "3.333vw",
                 fontFamily: "Pretendard-semibold",
               }}
             >
@@ -58,10 +62,13 @@ export const HomePage = () => {
           width: "100%",
           justifyContent: "center",
           padding: "0 7.949vw",
-          height: "32.82vh",
         }}
       >
-        <img src="/img/question_badge.svg" alt="이미지를 표시할 수 없습니다!" />
+        <img
+          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          src="/img/question_badge.svg"
+          alt="이미지를 표시할 수 없습니다!"
+        />
       </div>
       <div
         style={{
@@ -74,7 +81,7 @@ export const HomePage = () => {
         <div
           style={{
             fontFamily: "Pretendard-Medium",
-            fontSize: "15px",
+            fontSize: "3.846vw",
             color: "#B1B5B8",
           }}
         >
