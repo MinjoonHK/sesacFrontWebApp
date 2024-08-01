@@ -48,7 +48,7 @@ export const SignUpPage = () => {
           form={signUpForm}
           onFinish={handleSubmit}
           layout="vertical"
-          style={{ padding: "0 32px" }}
+          style={{ padding: "0 8.205vw" }}
           initialValues={{
             email: "",
             authCode: "",
@@ -80,7 +80,7 @@ export const SignUpPage = () => {
               style={{
                 fontFamily: "Pretendard-Regular",
                 display: "inline-block",
-                width: "calc(236px - 8px)",
+                width: "calc(60.513vw - 2.051vw)",
               }}
             >
               <input
@@ -93,8 +93,8 @@ export const SignUpPage = () => {
                 display: "inline-block",
                 position: "relative",
                 height: "100%",
-                marginTop: "30px",
-                marginLeft: "8px",
+                marginTop: "3.555vh",
+                marginLeft: "2.051vw",
               }}
             >
               <Button
@@ -120,8 +120,8 @@ export const SignUpPage = () => {
                 }}
                 style={{
                   borderRadius: "24.5px",
-                  height: "28px",
-                  fontSize: "10px",
+                  height: "3.318vh",
+                  fontSize: "2.564vw",
                   fontFamily: "Pretendard-Medium",
                 }}
               >
@@ -223,7 +223,7 @@ export const SignUpPage = () => {
                 borderRadius: "24.5px",
                 fontFamily: "Pretendard-Bold",
                 color: "white",
-                fontSize: "16px",
+                fontSize: "4.103vw",
                 backgroundColor: "#3561FF",
                 border: "none",
               }}
