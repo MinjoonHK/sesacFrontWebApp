@@ -5,8 +5,8 @@ export const CalendarPage = () => {
     <div>
       <div
         style={{
-          marginTop: "47px",
-          marginLeft: "32px",
+          marginTop: "5.569vh",
+          marginLeft: "8.205vw",
           fontSize: "24px",
           fontFamily: "Pretendard-extraBold",
         }}
@@ -20,27 +20,27 @@ export const CalendarPage = () => {
 
       <div
         style={{
-          marginTop: "26px",
-          marginLeft: "32px",
+          marginTop: "3.081vh",
+          marginLeft: "8.205vw",
           fontSize: "16px",
           fontFamily: "Pretendard-bold",
         }}
       >
         <div>
-          <span style={{ marginRight: "23px" }}>지출</span>
+          <span style={{ marginRight: "5.897vw" }}>지출</span>
           <span>1,012,500 원</span>
         </div>
-        <div style={{ marginTop: "12px" }}>
-          <span style={{ marginRight: "23px" }}>수입</span>
+        <div style={{ marginTop: "1.422vh" }}>
+          <span style={{ marginRight: "5.897vw" }}>수입</span>
           <span style={{ color: "#3561FF" }}>1,200,000 원</span>
         </div>
       </div>
       <div
         style={{
-          padding: "0 32px",
+          padding: "0 8.205vw",
           boxSizing: "border-box",
           height: "10.664vh",
-          marginTop: "25px",
+          marginTop: "2.962vh",
         }}
       >
         <div
@@ -78,10 +78,10 @@ export const CalendarPage = () => {
           </div>
         </div>
       </div>
-      <div style={{ marginTop: "21px", padding: "0 31px" }}>
+      <div style={{ marginTop: "2.488vh", padding: "0 7.949vw" }}>
         <div
           style={{
-            height: "411px",
+            height: "48.697vh",
             border: "1px solid #E0E0E0",
             borderRadius: "22px",
           }}
