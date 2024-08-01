@@ -1,4 +1,3 @@
-import TextArea from "antd/es/input/TextArea";
 import "./communityWrite.css";
 import { Form } from "antd";
 import { useNavigate } from "react-router-dom";
