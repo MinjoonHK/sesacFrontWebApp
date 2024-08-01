@@ -20,7 +20,7 @@ export const ChatUI = () => {
         </div>
         <div
           style={{
-            marginTop: "95px",
+            marginTop: "10.19vh",
             display: "flex",
             justifyContent: "center",
           }}
@@ -31,9 +31,9 @@ export const ChatUI = () => {
         <div
           style={{
             width: "100%",
-            marginTop: "18px",
+            marginTop: "2.133vh",
             textAlign: "center",
-            fontSize: "18px",
+            fontSize: "4.615vw",
             fontWeight: "bold",
           }}
         >
@@ -41,20 +41,23 @@ export const ChatUI = () => {
         </div>
         <div
           style={{
-            bottom: "47px",
-            position: "absolute",
+            bottom: "5.569vh",
+            position: "fixed",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            padding: "0 7.949vw",
           }}
         >
           <input
             placeholder="메시지를 입력해주세요"
             style={{
               backgroundColor: "#EEF2F5",
-              marginLeft: "31px",
               borderRadius: "24.5px",
+              paddingRight: "21px",
+              paddingTop: "13px",
               paddingLeft: "21px",
-              width: "328px",
-              height: "47px",
-              marginRight: "31px",
+              height: "5.569vh",
             }}
           ></input>
         </div>
