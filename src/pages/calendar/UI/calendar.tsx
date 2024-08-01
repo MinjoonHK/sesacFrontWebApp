@@ -81,12 +81,14 @@ export const CalendarPage = () => {
       <div style={{ marginTop: "2.488vh", padding: "0 7.949vw" }}>
         <div
           style={{
-            height: "48.697vh",
             border: "1px solid #E0E0E0",
             borderRadius: "22px",
           }}
         >
-          <Calendar fullscreen={false} style={{ borderRadius: "22px" }} />
+          <Calendar
+            fullscreen={false}
+            style={{ borderRadius: "22px", height: "42.697vh" }}
+          />
         </div>
       </div>
     </div>
