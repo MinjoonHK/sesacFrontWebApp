@@ -1,0 +1,11 @@
+input::placeholder {
+  font-family: "Pretendard-Semibold";
+  color: #b1b5b8;
+  font-size: 15px;
+}
+
+textarea::placeholder {
+  font-family: "Pretendard-Semibold";
+  color: #b1b5b8;
+  font-size: 15px;
+}

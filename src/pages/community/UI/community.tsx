@@ -106,7 +106,7 @@ export const CommunityPage = () => {
           right: "8.205vw",
           width: "auto",
           height: "auto",
-          backgroundColor: "transparent",
+          backgroundColor: "#FBFBFB",
           border: "1px solid #DEDEDE",
           padding: "10px",
           borderRadius: "50%",
