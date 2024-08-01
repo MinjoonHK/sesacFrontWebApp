@@ -103,20 +103,6 @@ export const HomePage = () => {
               justifyContent: "space-between",
             }}
           >
-            <div>회원정보</div>
-            <div>
-              <img
-                src="/img/home_right_arrow.svg"
-                alt="이미지를 표시할수 없습니다!"
-              />
-            </div>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
             <div>공지사항</div>
             <div>
               <img

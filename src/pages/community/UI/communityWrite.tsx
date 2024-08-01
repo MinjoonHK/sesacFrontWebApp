@@ -8,7 +8,7 @@ export const CommunityWritePage = () => {
     <div>
       <div
         style={{
-          padding: "0 29px",
+          padding: "0 7.436vw",
           marginTop: "3.199vh",
           display: "flex",
         }}
@@ -25,8 +25,9 @@ export const CommunityWritePage = () => {
         </div>
         <div
           style={{
+            textWrap: "nowrap",
             fontFamily: "Pretendard-bold",
-            fontSize: "20px",
+            fontSize: "5.128vw",
             marginLeft: "27.051vw",
             marginRight: "22.821vw",
           }}
