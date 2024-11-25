@@ -3,8 +3,27 @@ import "./chatbot.css";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { TypeAnimation } from "react-type-animation";
+import { jwtDecode } from "jwt-decode";
+import { Button, Modal } from "antd";
+
+interface DecodedToken {
+  exp: number;
+  name: string;
+  iat: number;
+  userId: string;
+  email: string;
+}
 
 export const ChatUI = () => {
+  const [openModal, setOpenModal] = useState(false);
+  const [username, setUsername] = useState<string>("");
+  useEffect(() => {
+    let accessToken = localStorage.getItem("access_token");
+    if (accessToken) {
+      let decoded: DecodedToken = jwtDecode<DecodedToken>(accessToken);
+      setUsername(decoded.name);
+    }
+  }, []);
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [chatMessages, setChatMessages] = useState([
@@ -25,6 +44,9 @@ export const ChatUI = () => {
         const res = await axios.post("http://203.234.62.82/api/question/chat", {
           content: JSON.stringify({ message }),
         });
+        if (res.data.answer.is_negative === true) {
+          setOpenModal(true);
+        }
         const botMessage = {
           sender: "bot",
           text:
@@ -88,7 +110,7 @@ export const ChatUI = () => {
             fontWeight: "bold",
           }}
         >
-          김새싹님, 무엇을 도와드릴까요?
+          {username}님, 무엇을 도와드릴까요?
         </div>
         <div
           ref={chatContainerRef}
@@ -179,6 +201,40 @@ export const ChatUI = () => {
           ></input>
         </div>
       </div>
+      <Modal
+        closeIcon={null}
+        footer={[
+          <Button
+            key="cancel"
+            onClick={() => {
+              setOpenModal(false);
+            }}
+          >
+            아니요
+          </Button>,
+          <Button
+            key="ok"
+            type="primary"
+            onClick={() => {
+              window.open("https://www.kfsp.or.kr/home/kor/main.do", "_blank");
+              setOpenModal(false);
+            }}
+          >
+            네
+          </Button>,
+        ]}
+        centered={true}
+        open={openModal}
+      >
+        <p style={{ fontFamily: "Pretendard-Medium" }}>
+          많이 힘드신 것 같아요.
+          <br /> 한국 생명존중희망재단의 상담을 <br />
+          받아보시는것을 권장드려요.
+        </p>
+        <p style={{ fontFamily: "Pretendard-Medium" }}>
+          해당 페이지로 이동하시겠어요?
+        </p>
+      </Modal>
     </div>
   );
 };
