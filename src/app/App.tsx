@@ -10,6 +10,7 @@ import { CommunityPage } from "../pages/community/UI/community";
 import { CommunityWritePage } from "../pages/community";
 import { HomePage } from "../pages/home";
 import { DesktopPage } from "../pages/desktop";
+import "./App.css"
 
 function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
