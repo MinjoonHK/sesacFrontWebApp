@@ -26,19 +26,24 @@ function App() {
     };
   }, []);
 
-  // 모바일 라우터 설정
-  const mobileRouter = createBrowserRouter([
-    { path: "/", element: <LoginPage /> },
-    { path: "/login", element: <LoginInputPage /> },
-    { path: "/signup", element: <SignUpPage /> },
-    { path: "/chat", element: <ChatUI /> },
-    { path: "/main", element: <MainPage /> },
-    { path: "/main/home", element: <HomePage /> },
-    { path: "/main/calendar", element: <CalendarPage /> },
-    { path: "/main/community", element: <CommunityPage /> },
-    { path: "/main/write", element: <CommunityWritePage /> },
-    { path: "*", element: <div>Page Not Found</div> },
-  ]);
+ const mobileRouter = createBrowserRouter([
+   { path: "/", element: <LoginPage /> },
+   { path: "/login", element: <LoginInputPage /> },
+   { path: "/signup", element: <SignUpPage /> },
+   { path: "/chat", element: <ChatUI /> },
+   {
+     path: "/main",
+     element: <MainPage />, 
+     children: [
+       { path: "home", element: <HomePage /> },
+       { path: "calendar", element: <CalendarPage /> },
+       { path: "community", element: <CommunityPage /> },
+       { path: "write", element: <CommunityWritePage /> },
+     ],
+   },
+   { path: "*", element: <div>Page Not Found</div> },
+ ]);
+
 
   return isMobile ? (
     <RouterProvider router={mobileRouter} />
