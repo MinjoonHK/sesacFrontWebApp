@@ -52,11 +52,11 @@ export const SignUpPage = () => {
     }
   };
 
-  const stopTimer = () => {
-    if (workerRef.current) {
-      workerRef.current.postMessage({ action: "stop" });
-    }
-  };
+  // const stopTimer = () => {
+  //   if (workerRef.current) {
+  //     workerRef.current.postMessage({ action: "stop" });
+  //   }
+  // };
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
