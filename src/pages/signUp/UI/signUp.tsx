@@ -3,7 +3,7 @@ import "./signUp.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface SignUpForm {
   email: string;
@@ -14,10 +14,56 @@ interface SignUpForm {
   birth: string;
 }
 export const SignUpPage = () => {
+  const navigate = useNavigate();
   const [emailSent, setEmailSent] = useState(false);
   const [verified, setVerified] = useState(false);
-  const navigate = useNavigate();
+  const [timeLeft, setTimeLeft] = useState(0);
   const [signUpForm] = Form.useForm();
+  const workerRef = useRef<Worker | null>(null);
+
+
+  useEffect(() => {
+    // Web Worker 초기화
+    workerRef.current = new Worker("/timerWorker.js");
+
+    workerRef.current.onmessage = (e: MessageEvent<number>) => {
+      const remainingTime = e.data;
+      setTimeLeft(remainingTime);
+
+      if (remainingTime <= 0) {
+        Swal.fire({
+          icon: "error",
+          title: "이미 3분이 지났습니다!",
+          text: "다시 인증번호를 요청해주세요.",
+        });
+        setEmailSent(false);
+      }
+    };
+
+    return () => {
+      workerRef.current?.terminate();
+      workerRef.current = null;
+    };
+  }, []);
+
+  const startTimer = () => {
+    if (workerRef.current) {
+      workerRef.current.postMessage({ action: "start", interval: 180 });
+    }
+  };
+
+  const stopTimer = () => {
+    if (workerRef.current) {
+      workerRef.current.postMessage({ action: "stop" });
+    }
+  };
+
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+  };
+  
   const handleSubmit = ({ email, password, userName, birth }: SignUpForm) => {
     axios
       .post("/auth/signup", {
@@ -91,7 +137,9 @@ export const SignUpPage = () => {
             >
               <input
                 className="signup-page-signup-content-input"
-                placeholder="인증번호 입력"
+                placeholder={`인증번호 입력 ${
+                  emailSent ? `(${formatTime(timeLeft)})` : ""
+                }`}
               />
             </Form.Item>
             <Form.Item
@@ -113,7 +161,6 @@ export const SignUpPage = () => {
                         code: signUpForm.getFieldValue("authCode"),
                       })
                       .then((res) => {
-                        console.log(res);
                         if (res.data.verified === true) {
                           setVerified(true);
                           Swal.fire({
@@ -146,11 +193,9 @@ export const SignUpPage = () => {
                       .post("/mail/send", {
                         to: signUpForm.getFieldValue("email"),
                       })
-                      .then((res) => {
-                        console.log(res);
-                        if (res) {
-                          setEmailSent(true);
-                        }
+                      .then(() => {
+                        setEmailSent(true);
+                        startTimer();
                       })
                       .catch((err) => {
                         console.log(err);

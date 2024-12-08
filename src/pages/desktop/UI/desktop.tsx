@@ -49,14 +49,14 @@ export const DesktopPage = () =>{
             >
               보호종료아동 자립 지원 어플리케이션
             </div>
-            <div style={{ display: "flex", justifyContent:"space-between", marginTop:"5vh" }}>
+            <div style={{ display: "flex", marginTop:"5vh" }}>
               <img
                 style={{ height: "8vh", width: "14vw" }}
                 src="/img/appstore_logo.png"
                 alt="이미지를 표시할 수 없습니다"
               />
               <img
-                style={{ height: "8vh", width: "14vw" }}
+                style={{ height: "8vh", width: "14vw", marginLeft:"10px" }}
                 src="/img/playStore_logo.png"
                 alt="이미지를 표시할 수 없습니다"
               />
